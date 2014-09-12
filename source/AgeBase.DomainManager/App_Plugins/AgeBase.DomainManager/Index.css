@@ -1,0 +1,14 @@
+﻿.agebase-domain-manager .table {
+    max-width: 1200px;
+    width: auto;
+}
+
+.agebase-domain-manager .table .domain {
+    width: 250px;
+    padding-left: 0;
+}
+
+.agebase-domain-manager .table .culture,
+.agebase-domain-manager .table .node {
+    width: 100px;
+}

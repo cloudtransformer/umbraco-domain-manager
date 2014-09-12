@@ -1,0 +1,27 @@
+﻿<div ng-controller="AgeBase.DomainManager.IndexController" class="agebase-domain-manager">
+    <h3>Domain Manager</h3>
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="domain">Domain</th>
+                    <th class="culture">Culture</th>
+                    <th class="node">Node</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="domain in domains">
+                    <td class="domain">
+                        <a href="{{ domain.Url }}" target="_blank">{{ domain.Name }}</a>
+                    </td>
+                    <td>{{ domain.Culture }}</td>
+                    <td><a>{{ domain.RootNodeName }}</a></td>
+                    <td><i class="icon icon-edit"></i></td>
+                    <td><i class="icon icon-delete"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> 

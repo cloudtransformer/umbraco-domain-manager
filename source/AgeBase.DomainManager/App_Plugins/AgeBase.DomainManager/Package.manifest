@@ -1,0 +1,8 @@
+﻿{
+	javascript: [
+	    "~/App_Plugins/AgeBase.DomainManager/Index.Controller.js"
+	],
+	css: [
+		"~/App_Plugins/AgeBase.DomainManager/Index.css"
+	]
+}

@@ -226,18 +226,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\DomainManagerApiController.cs" />
+    <Compile Include="Events\ApplicationStartup.cs" />
+    <Compile Include="Helpers\DashboardHelper.cs" />
+    <Compile Include="Models\DomainManagerDomain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App_Plugins\AgeBase.DomainManager\Package.manifest" />
     <None Include="Packages.config">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Plugins\AgeBase.DomainManager\Index.Controller.js" />
+    <Content Include="App_Plugins\AgeBase.DomainManager\Index.css" />
+    <Content Include="App_Plugins\AgeBase.DomainManager\Index.html" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\..\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\..\.nuget\NuGet.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>xcopy $(TargetPath) "C:\Users\Dan Lister\Documents\My Web Sites\Umbraco CMS6\bin" /Y
+xcopy $(ProjectDir)App_Plugins\AgeBase.DomainManager\Index.Controller.js "C:\Users\Dan Lister\Documents\My Web Sites\Umbraco CMS6\App_Plugins\AgeBase.DomainManager" /Y
+xcopy $(ProjectDir)App_Plugins\AgeBase.DomainManager\Index.css "C:\Users\Dan Lister\Documents\My Web Sites\Umbraco CMS6\App_Plugins\AgeBase.DomainManager" /Y
+xcopy $(ProjectDir)App_Plugins\AgeBase.DomainManager\Index.html "C:\Users\Dan Lister\Documents\My Web Sites\Umbraco CMS6\App_Plugins\AgeBase.DomainManager" /Y
+xcopy $(ProjectDir)App_Plugins\AgeBase.DomainManager\Package.manifest "C:\Users\Dan Lister\Documents\My Web Sites\Umbraco CMS6\App_Plugins\AgeBase.DomainManager" /Y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
