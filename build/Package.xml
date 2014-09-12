@@ -6,6 +6,26 @@
       <orgPath>/bin</orgPath>
       <orgName>AgeBase.DomainManager.dll</orgName>
     </file>
+    <file>
+      <guid>Index.Controller.js</guid>
+      <orgPath>/App_Plugins/AgeBase.DomainManager</orgPath>
+      <orgName>Index.Controller.js</orgName>
+    </file>
+    <file>
+      <guid>Index.css</guid>
+      <orgPath>/App_Plugins/AgeBase.DomainManager</orgPath>
+      <orgName>Index.css</orgName>
+    </file>
+    <file>
+      <guid>Index.html</guid>
+      <orgPath>/App_Plugins/AgeBase.DomainManager</orgPath>
+      <orgName>Index.html</orgName>
+    </file>
+    <file>
+      <guid>Package.manifest</guid>
+      <orgPath>/App_Plugins/AgeBase.DomainManager</orgPath>
+      <orgName>Package.manifest</orgName>
+    </file>
   </files>
   <info>
     <package>

@@ -17,6 +17,10 @@
     <MakeDir Directories="$(OutputFolder)" />
     <Copy SourceFiles="$(PackageXmlFile)" DestinationFolder="$(OutputFolder)" />
     <Copy SourceFiles="$(ProjectFolder)\bin\$(ProjectName).dll" DestinationFolder="$(OutputFolder)" />
+    <Copy SourceFiles="$(ProjectFolder)\App_Plugins\AgeBase.DomainManager\Index.Controller.js" DestinationFolder="$(OutputFolder)" />
+    <Copy SourceFiles="$(ProjectFolder)\App_Plugins\AgeBase.DomainManager\Index.css" DestinationFolder="$(OutputFolder)" />
+    <Copy SourceFiles="$(ProjectFolder)\App_Plugins\AgeBase.DomainManager\Index.html" DestinationFolder="$(OutputFolder)" />
+    <Copy SourceFiles="$(ProjectFolder)\App_Plugins\AgeBase.DomainManager\Package.manifest" DestinationFolder="$(OutputFolder)" />
   </Target>
   <Target Name="Compress">
     <ItemGroup>
