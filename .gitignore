@@ -1,0 +1,7 @@
+packages
+bin
+obj
+NuGetBackup
+*.user
+*.suo
+source/AgeBase/

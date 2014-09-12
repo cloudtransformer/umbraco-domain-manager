@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Package" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+  <PropertyGroup>
+    <ProjectName>AgeBase.DomainManager</ProjectName>
+    <ZipName>AgeBase_Domain_Manager</ZipName>
+    <OutputFolder>$(MSBuildStartupDirectory)\Output</OutputFolder>
+    <ProjectFolder>$(MSBuildStartupDirectory)\..\Source\$(ProjectName)</ProjectFolder>
+    <PackageXmlFile>$(MSBuildStartupDirectory)\package.xml</PackageXmlFile>
+  </PropertyGroup>
+  <Target Name="Package">
+    <CallTarget Targets="Copy" />
+    <CallTarget Targets="Compress" />
+    <CallTarget Targets="Clean" />
+  </Target>
+  <Target Name="Copy">
+    <MakeDir Directories="$(OutputFolder)" />
+    <Copy SourceFiles="$(PackageXmlFile)" DestinationFolder="$(OutputFolder)" />
+    <Copy SourceFiles="$(ProjectFolder)\bin\$(ProjectName).dll" DestinationFolder="$(OutputFolder)" />
+  </Target>
+  <Target Name="Compress">
+    <ItemGroup>
+      <PackageFiles Include="$(OutputFolder)\**\*.*" Exclude="" />
+    </ItemGroup>
+    <Zip Files="@(PackageFiles)" WorkingDirectory="$(OutputFolder)" ZipFileName="$(ZipName)_$(Version).zip" ZipLevel="9" />
+  </Target>
+  <Target Name="Clean">
+    <ItemGroup>
+      <PackageToDelete Include="$(OutputFolder)\..\..\..\$(ZipName)_$(Version).zip" />
+      <PackageToMove Include="$(OutputFolder)\..\$(ZipName)_$(Version).zip" />
+    </ItemGroup>
+    <RemoveDir Directories="$(OutputFolder)" />
+    <Delete Files="@(PackageToDelete)" />
+    <Move SourceFiles="@(PackageToMove)" DestinationFolder="$(OutputFolder)\..\..\..\" />
+  </Target>
+</Project>

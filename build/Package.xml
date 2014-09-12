@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<umbPackage>
+  <files>
+    <file>
+      <guid>AgeBase.DomainManager.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>AgeBase.DomainManager.dll</orgName>
+    </file>
+  </files>
+  <info>
+    <package>
+      <name>AgeBase: Domain Manager</name>
+      <version>1.0.0</version>
+      <license url="http://opensource.org/licenses/MIT">MIT License</license>
+      <url>http://agebase.co.uk/</url>
+      <requirements>
+        <major>7</major>
+        <minor>1</minor>
+        <patch>6</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>AgeBase</name>
+      <website>http://agebase.co.uk/</website>
+    </author>
+    <readme><![CDATA[The Domain Manager package is...
+	
+For full documentation and instructions on how you can use or contribute, please go to https://github.com/agebase/umbraco-domain-manager]]></readme>
+  </info>
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes />
+</umbPackage>

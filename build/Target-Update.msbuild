@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Update" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+  <Import Project="$(MSBuildExtensionsPath)\ExtensionPack\4.0\MSBuild.ExtensionPack.tasks"/>
+  <PropertyGroup>
+    <ProjectName>AgeBase.DomainManager</ProjectName>
+    <ProjectFolder>$(MSBuildStartupDirectory)\..\Source\$(ProjectName)</ProjectFolder>
+    <PackageNuGetFile>$(MSBuildStartupDirectory)\package.nuspec</PackageNuGetFile>
+    <PackageXmlFile>$(MSBuildStartupDirectory)\package.xml</PackageXmlFile>
+  </PropertyGroup>
+  <Target Name="Update">
+    <Exec Command="..\tools\AssemblyInfoUtil.exe -set:%VERSION%.* &quot;..\source\$(ProjectName)\Properties\AssemblyInfo.cs&quot;" />
+    <MSBuild.ExtensionPack.Xml.XmlFile TaskAction="UpdateElement" File="$(PackageNuGetFile)" XPath="/package/metadata/version" InnerText="$(Version)"/>
+    <MSBuild.ExtensionPack.Xml.XmlFile TaskAction="UpdateElement" File="$(PackageXmlFile)" XPath="/umbPackage/info/package/version" InnerText="$(Version)"/>
+  </Target>
+</Project>

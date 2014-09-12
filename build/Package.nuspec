@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <title>Domain Manager</title>
+    <id>AgeBase.DomainManager</id>
+    <version>1.0.0</version>
+    <authors>AgeBase</authors>
+    <owners>AgeBase</owners>
+    <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
+    <projectUrl>https://agebase.co.uk/blog/domain-manager-for-umbraco/</projectUrl>
+    <iconUrl>https://agebase.co.uk/media/14030/nuget-logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The Domain Manager package is...</description>
+    <summary>The Domain Manager package is...</summary>
+    <releaseNotes>Initial NuGet package release.</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>umbraco domain manager dashboard backoffice</tags>
+    <dependencies>
+      <dependency id="UmbracoCms.Core" version="7.1.6" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\source\AgeBase.DomainManager\bin\AgeBase.DomainManager.dll" target="lib\AgeBase.DomainManager.dll" />
+  </files>
+</package>
