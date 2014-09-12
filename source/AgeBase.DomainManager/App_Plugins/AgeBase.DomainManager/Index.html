@@ -1,5 +1,9 @@
 ﻿<div ng-controller="AgeBase.DomainManager.IndexController" class="agebase-domain-manager">
     <h3>Domain Manager</h3>
+    <div class="search">
+        <i class="icon-search"></i>
+        <input placeholder="Search domains..." ng-model="searchText" />
+    </div>
     <div class="row">
         <table class="table table-striped">
             <thead>
@@ -12,7 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="domain in domains">
+                <tr ng-repeat="domain in domains | filter:searchText">
                     <td class="domain">
                         <a href="{{ domain.Url }}" target="_blank">{{ domain.Name }}</a>
                     </td>
