@@ -5,10 +5,10 @@
             <thead>
                 <tr>
                     <th class="domain">Domain</th>
-                    <th class="culture">Culture</th>
                     <th class="node">Node</th>
-                    <th></th>
-                    <th></th>
+                    <th class="culture">Culture</th>
+                    <th class="action"></th>
+                    <th class="action"></th>
                 </tr>
             </thead>
             <tbody>
@@ -16,10 +16,10 @@
                     <td class="domain">
                         <a href="{{ domain.Url }}" target="_blank">{{ domain.Name }}</a>
                     </td>
-                    <td>{{ domain.Culture }}</td>
                     <td class="node"><a ng-click="showNode(domain.RootNodeId)">{{ domain.RootNodeName }}</a></td>
-                    <td><i class="icon icon-edit"></i></td>
-                    <td><i class="icon icon-delete"></i></td>
+                    <td class="culture">{{ domain.Culture }}</td>
+                    <td class="action"><i class="icon icon-edit"></i></td>
+                    <td class="action"><i class="icon icon-delete"></i></td>
                 </tr>
             </tbody>
         </table>

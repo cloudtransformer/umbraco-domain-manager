@@ -1,18 +1,27 @@
 ﻿.agebase-domain-manager .table {
     max-width: 1200px;
-    width: auto;
 }
 
 .agebase-domain-manager .table .domain {
-    width: 250px;
+    width: 50%;
     padding-left: 0;
 }
 
-.agebase-domain-manager .table .culture,
 .agebase-domain-manager .table .node {
-    width: 100px;
+    width: 50%;
 }
 
-.agebase-domain-manager .table .node:hover {
+.agebase-domain-manager .table td.node:hover {
     cursor: pointer;
+}
+
+.agebase-domain-manager .table .culture {
+    display: block;
+    width: 100px;
+    text-align: center;
+}
+
+.agebase-domain-manager .table .action {
+    width: 25px;
+    text-align: center;
 }
