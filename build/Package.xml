@@ -43,7 +43,7 @@
       <name>AgeBase</name>
       <website>http://agebase.co.uk/</website>
     </author>
-    <readme><![CDATA[The Domain Manager package is...
+    <readme><![CDATA[The Domain Manager package is a handy content dashboard item for viewing domains within an Umbraco application. It allows editors to view each domain, it's culture and which node the domain is associated to. The dashboard item also allows editors to remove domains too. This package is especially good for multi lingual sites.
 	
 For full documentation and instructions on how you can use or contribute, please go to https://github.com/agebase/umbraco-domain-manager]]></readme>
   </info>

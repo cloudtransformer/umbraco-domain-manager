@@ -1,20 +1,12 @@
 # AgeBase: Domain Manager
 
-The Domain Manager package is...
+The Domain Manager package is a handy content dashboard item for viewing domains within an Umbraco application. It allows editors to view each domain, it's culture and which node the domain is associated to. The dashboard item also allows editors to remove domains too. This package is especially good for multi lingual sites.
 
 ## Installation
 
 The Domain Manager package can be installed via the package's page on [our.umbraco.org](http://our.umbraco.org/projects/backoffice-extensions/domain-manager) or via NuGet. If installing via NuGet, use the following package manager command:
 
     Install-Package AgeBase.DomainManager
-
-## Configuration
-
-
-
-## Usage
-
-
 
 ## Contributing
 

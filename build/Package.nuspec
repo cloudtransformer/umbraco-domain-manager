@@ -10,8 +10,8 @@
     <projectUrl>https://agebase.co.uk/blog/domain-manager-for-umbraco/</projectUrl>
     <iconUrl>https://agebase.co.uk/media/14030/nuget-logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>The Domain Manager package is...</description>
-    <summary>The Domain Manager package is...</summary>
+    <description>The Domain Manager package is a handy content dashboard item for viewing domains within an Umbraco application. It allows editors to view each domain, it's culture and which node the domain is associated to. The dashboard item also allows editors to remove domains too. This package is especially good for multi lingual sites.</description>
+    <summary>The Domain Manager package is a handy content dashboard item for viewing domains within an Umbraco application.</summary>
     <releaseNotes>Initial NuGet package release.</releaseNotes>
     <copyright>Copyright 2014</copyright>
     <tags>umbraco domain manager dashboard backoffice</tags>
