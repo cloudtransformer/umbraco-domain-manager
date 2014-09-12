@@ -21,5 +21,9 @@
   </metadata>
   <files>
     <file src="..\source\AgeBase.DomainManager\bin\AgeBase.DomainManager.dll" target="lib\AgeBase.DomainManager.dll" />
+    <file src="..\source\AgeBase.DomainManager\App_Plugins\AgeBase.DomainManager\Index.Controller.js" target="content\App_Plugins\AgeBase.DomainManager\Index.Controller.js" />
+    <file src="..\source\AgeBase.DomainManager\App_Plugins\AgeBase.DomainManager\Index.css" target="content\App_Plugins\AgeBase.DomainManager\Index.css" />
+    <file src="..\source\AgeBase.DomainManager\App_Plugins\AgeBase.DomainManager\Index.html" target="content\App_Plugins\AgeBase.DomainManager\Index.html" />
+    <file src="..\source\AgeBase.DomainManager\App_Plugins\AgeBase.DomainManager\Package.manifest" target="content\App_Plugins\AgeBase.DomainManager\Package.manifest" />
   </files>
 </package>

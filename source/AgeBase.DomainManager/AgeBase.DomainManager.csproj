@@ -247,11 +247,8 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\..\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\..\.nuget\NuGet.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy $(TargetPath) "C:\Users\Dan Lister\Documents\My Web Sites\Umbraco CMS6\bin" /Y
-xcopy $(ProjectDir)App_Plugins\AgeBase.DomainManager\Index.Controller.js "C:\Users\Dan Lister\Documents\My Web Sites\Umbraco CMS6\App_Plugins\AgeBase.DomainManager" /Y
-xcopy $(ProjectDir)App_Plugins\AgeBase.DomainManager\Index.css "C:\Users\Dan Lister\Documents\My Web Sites\Umbraco CMS6\App_Plugins\AgeBase.DomainManager" /Y
-xcopy $(ProjectDir)App_Plugins\AgeBase.DomainManager\Index.html "C:\Users\Dan Lister\Documents\My Web Sites\Umbraco CMS6\App_Plugins\AgeBase.DomainManager" /Y
-xcopy $(ProjectDir)App_Plugins\AgeBase.DomainManager\Package.manifest "C:\Users\Dan Lister\Documents\My Web Sites\Umbraco CMS6\App_Plugins\AgeBase.DomainManager" /Y</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
