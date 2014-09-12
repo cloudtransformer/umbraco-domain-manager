@@ -1,11 +1,11 @@
 ﻿<div ng-controller="AgeBase.DomainManager.IndexController" class="agebase-domain-manager">
     <h3>Domain Manager</h3>
-    <div class="search">
+    <div class="search" ng-show="domains.length > 0">
         <i class="icon-search"></i>
         <input placeholder="Search domains..." ng-model="searchText" />
     </div>
     <div class="row">
-        <table class="table table-striped">
+        <table class="table table-striped" ng-show="domains.length > 0">
             <thead>
                 <tr>
                     <th class="domain">Domain</th>
@@ -22,10 +22,13 @@
                     </td>
                     <td class="node"><a ng-click="showNode(domain.RootNodeId)">{{ domain.RootNodeName }}</a></td>
                     <td class="culture">{{ domain.Culture }}</td>
-                    <td class="action"><i class="icon icon-edit"></i></td>
-                    <td class="action"><i class="icon icon-delete"></i></td>
+                    <td class="action"><span class="icon icon-edit"></span></td>
+                    <td class="action"><span class="icon icon-delete" ng-click="deleteDomain(domain)"></span></td>
                 </tr>
             </tbody>
         </table>
+    </div>
+    <div ng-show="domains.length < 1">
+        You do not appear to have any domains set. Add domains via the content tree.
     </div>
 </div> 

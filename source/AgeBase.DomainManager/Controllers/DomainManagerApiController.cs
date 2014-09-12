@@ -12,10 +12,23 @@ namespace AgeBase.DomainManager.Controllers
     public class DomainManagerApiController : UmbracoAuthorizedApiController
     {
         [HttpGet]
-        public IEnumerable<DomainManagerDomain> List()
+        public IEnumerable<DomainManagerDomain> Get()
         {
             var contentService = ApplicationContext.Services.ContentService;
             return Domain.GetDomains(true).OrderBy(d => d.Name).Select(d => new DomainManagerDomain(d, contentService));
+        }
+
+        [HttpDelete]
+        public bool Delete(int id)
+        {
+            // TODO: Find a better way to filter by id instead of retrieving all domains together
+
+            var domain = Domain.GetDomains(true).FirstOrDefault(d => d.Id.Equals(id));
+            if (domain == null) 
+                return false;
+
+            domain.Delete();
+            return true;
         }
     }
 }
