@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 using AgeBase.DomainManager.Helpers;
+using umbraco.cms.businesslogic.packager;
 using Umbraco.Core;
 
 namespace AgeBase.DomainManager.Events
@@ -17,7 +18,14 @@ namespace AgeBase.DomainManager.Events
 
         protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
+            // Install
             DashboardHelper.AddTab("StartupDashboardSection", "Domain Manager", "/App_Plugins/AgeBase.DomainManager/Index.html");
+
+            // Uninstall
+            InstalledPackage.BeforeDelete += delegate
+            {
+                DashboardHelper.RemoveTab("StartupDashboardSection", "Domain Manager");
+            };
         }
     }
 }
