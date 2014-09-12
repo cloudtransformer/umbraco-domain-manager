@@ -17,7 +17,7 @@
                         <a href="{{ domain.Url }}" target="_blank">{{ domain.Name }}</a>
                     </td>
                     <td>{{ domain.Culture }}</td>
-                    <td><a>{{ domain.RootNodeName }}</a></td>
+                    <td class="node"><a ng-click="showNode(domain.RootNodeId)">{{ domain.RootNodeName }}</a></td>
                     <td><i class="icon icon-edit"></i></td>
                     <td><i class="icon icon-delete"></i></td>
                 </tr>

@@ -12,3 +12,7 @@
 .agebase-domain-manager .table .node {
     width: 100px;
 }
+
+.agebase-domain-manager .table .node:hover {
+    cursor: pointer;
+}

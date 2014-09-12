@@ -1,4 +1,5 @@
-﻿angular.module("umbraco").controller("AgeBase.DomainManager.IndexController", function ($scope, $http, contentResource) {
+﻿angular.module("umbraco").controller("AgeBase.DomainManager.IndexController", function ($scope, $http) {
+
     $http.get("backoffice/AgeBaseDomainManager/DomainManagerApi/List").then(function (response) {
         $scope.domains = response.data;
 
@@ -9,4 +10,9 @@
                 $scope.domains[i].Url = $scope.domains[i].Name;
         }
     });
+
+    $scope.showNode = function (nodeId) {
+        window.location = "/umbraco/#/content/content/edit/" + nodeId;
+    };
+
 });
