@@ -17,7 +17,8 @@
             <tbody>
                 <tr ng-repeat="domain in domains | filter:searchText">
                     <td class="domain">
-                        <a href="{{ domain.Url }}" target="_blank">{{ domain.Name }}</a>
+                        <a ng-show="domain.Name != '-'" href="{{ domain.Url }}" target="_blank">{{ domain.Name }}</a>
+                        <span ng-show="domain.Name == '-'">{{ domain.Name }}</span>
                     </td>
                     <td class="node"><a ng-click="showNode(domain.RootNodeId)">{{ domain.RootNodeName }}</a></td>
                     <td class="culture">{{ domain.Culture }}</td>

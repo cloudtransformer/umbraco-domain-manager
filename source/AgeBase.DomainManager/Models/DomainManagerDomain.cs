@@ -21,7 +21,7 @@ namespace AgeBase.DomainManager.Models
 
             Id = domain.Id;
             Culture = domain.Language.CultureAlias;
-            Name = domain.Name;
+            Name = domain.Name.Equals("*" + domain.RootNodeId) ? "-" : domain.Name;
             RootNodeId = domain.RootNodeId;
 
             var rootNode = contentService.GetById(RootNodeId);
