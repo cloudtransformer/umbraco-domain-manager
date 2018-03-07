@@ -35,8 +35,8 @@
       <url>http://agebase.co.uk/</url>
       <requirements>
         <major>7</major>
-        <minor>1</minor>
-        <patch>6</patch>
+        <minor>6</minor>
+        <patch>0</patch>
       </requirements>
     </package>
     <author>
