@@ -16,7 +16,7 @@
     <copyright>Copyright 2014</copyright>
     <tags>umbraco domain manager dashboard backoffice</tags>
     <dependencies>
-      <dependency id="UmbracoCms.Core" version="7.1.6" />
+      <dependency id="UmbracoCms.Core" version="7.6.0" />
     </dependencies>
   </metadata>
   <files>
