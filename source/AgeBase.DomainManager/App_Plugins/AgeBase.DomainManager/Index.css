@@ -1,11 +1,25 @@
-﻿.agebase-domain-manager .table {
-    max-width: 1200px;
+﻿.agebase-domain-manager .umb-healthcheck-group__details {
     clear: both;
+}
+
+.agebase-domain-manager .table {
+    margin: 0;
+    border: none;
+    width: 100%;
+    clear: both;
+}
+
+.agebase-domain-manager thead {
+    background: none;
+    border-top: solid 1px rgb(216, 215, 217)
+}
+
+.agebase-domain-manager td, .agebase-domain-manager th {
+    padding: 15px 20px;
 }
 
 .agebase-domain-manager .domain {
     width: 50%;
-    padding-left: 0;
 }
 
 .agebase-domain-manager .node {
@@ -27,9 +41,9 @@
     text-align: center;
 }
 
-    .agebase-domain-manager .action span:hover {
-        cursor: pointer;
-    }
+.agebase-domain-manager .action span:hover {
+    cursor: pointer;
+}
 
 .agebase-domain-manager .search {
     float: right;
@@ -37,25 +51,24 @@
     padding: 18px 0 0;
 }
 
-    .agebase-domain-manager .search i {
-        position: absolute;
-        top: 24px;
-        left: 4px;
-        color: #d9d9d9;
-    }
+.agebase-domain-manager .search i {
+    position: absolute;
+    top: 24px;
+    left: 4px;
+    color: #d9d9d9;
+}
 
-    .agebase-domain-manager .search input {
-        height: 20px;
-        padding: 4px 6px;
-        font-size: 14px;
-        line-height: 20px;
-        color: #555;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        -ms-border-radius: 0;
-        border-radius: 0;
-        padding-left: 25px;
-    }
+.agebase-domain-manager .search input {
+    height: 20px;
+    padding: 4px 6px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    padding-left: 25px;
+}
 
 .agebase-domain-manager input:focus {
     outline: none;

@@ -11,43 +11,45 @@ namespace AgeBase.DomainManager.Helpers
         {
             var configPath = HostingEnvironment.MapPath("~/config/dashboard.config");
             if (configPath == null)
+            {
                 return;
+            }
 
             var configXml = XDocument.Load(configPath);
 
-            // Loop through each tab to see if the Domain
-            // Manager tab exists in any section
-
             var tabs = configXml.XPathSelectElements("//section/tab");
-            if (tabs.Any())
+            var enumerable = tabs.ToList();
+
+            if (enumerable.Any())
             {
-                foreach (var tab in tabs)
+                foreach (var tab in enumerable)
                 {
                     var control = tab.XPathSelectElement("control");
-                    if (control == null) 
+                    if (control == null)
+                    {
                         continue;
-
-                    // If it exists, there is no need to carry
-                    // on searching through other tabs
+                    }
 
                     if (control.Value.Equals(path))
+                    {
                         return;
+                    }
                 }
             }
 
-            // If we have got this far, we know that the Domain
-            // Mananger tab does not exist in any section.
-            // So let's add it
-
-            var sectionXml = configXml.XPathSelectElement(string.Format("//section [@alias='{0}']", section));
+            var sectionXml = configXml.XPathSelectElement($"//section [@alias='{section}']");
             if (sectionXml == null)
+            {
                 return;
+            }
 
-            var tabXml = sectionXml.XPathSelectElement(string.Format("//tab [@caption='{0}']", caption));
+            var tabXml = sectionXml.XPathSelectElement($"//tab [@caption='{caption}']");
             if (tabXml != null)
+            {
                 return;
+            }
 
-            var tabToAdd = XElement.Parse(string.Format("<tab caption=\"{0}\"><control>{1}</control></tab>", caption, path));
+            var tabToAdd = XElement.Parse($"<tab caption=\"{caption}\"><control>{path}</control></tab>");
 
             sectionXml.Add(tabToAdd);
             configXml.Save(configPath);
@@ -57,17 +59,19 @@ namespace AgeBase.DomainManager.Helpers
         {
             var configPath = HostingEnvironment.MapPath("~/config/dashboard.config");
             if (configPath == null)
+            {
                 return;
+            }
 
             var configXml = XDocument.Load(configPath);
 
-            var sectionXml = configXml.XPathSelectElement(string.Format("//section [@alias='{0}']", section));
-            if (sectionXml == null)
-                return;
+            var sectionXml = configXml.XPathSelectElement($"//section [@alias='{section}']");
 
-            var tabXml = sectionXml.XPathSelectElement(string.Format("//tab [@caption='{0}']", caption));
+            var tabXml = sectionXml?.XPathSelectElement($"//tab [@caption='{caption}']");
             if (tabXml == null)
+            {
                 return;
+            }
 
             tabXml.Remove();
             configXml.Save(configPath);

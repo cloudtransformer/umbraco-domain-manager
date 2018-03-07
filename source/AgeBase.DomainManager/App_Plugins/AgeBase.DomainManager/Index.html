@@ -1,33 +1,48 @@
 ﻿<div ng-controller="AgeBase.DomainManager.IndexController" class="agebase-domain-manager">
-    <h3>Domain Manager</h3>
-    <div class="search" ng-show="domains.length > 0">
-        <i class="icon-search"></i>
-        <input placeholder="Search domains..." ng-model="searchText" />
+
+    <div ng-hide="loading" class="umb-healthcheck-group__details" style="">
+
+        <div class="umb-healthcheck-group__details-group-title">
+            <div class="umb-healthcheck-group__details-group-name">Domains</div>
+        </div>
+
+        <div class="umb-healthcheck-group__details-checks">
+            <div class="umb-healthcheck-group__details-check">
+                <div class="umb-healthcheck-group__details-check-title">
+                    <div class="umb-healthcheck-group__details-check-name">Manage your Domains</div>
+                    <div class="umb-healthcheck-group__details-check-description">Allows you to view the details of each domain and provides some tools for accessing and deleting.</div>
+                </div>
+                <table class="table table-striped" ng-show="domains.length > 0">
+                    <thead>
+                        <tr>
+                            <th class="domain">Domain</th>
+                            <th class="node">Node</th>
+                            <th class="culture">Culture</th>
+                            <th class="action"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="domain in domains | filter:searchText">
+                            <td class="domain">
+                                <a ng-show="domain.Name != '-'" href="{{ domain.Url }}" target="_blank">{{ domain.Name }}</a>
+                                <span ng-show="domain.Name == '-'">{{ domain.Name }}</span>
+                            </td>
+                            <td class="node"><a ng-click="showNode(domain.RootNodeId)">{{ domain.RootNodeName }}</a></td>
+                            <td class="culture">{{ domain.Culture }}</td>
+                            <td class="action"><span class="icon icon-delete" ng-click="deleteDomain(domain)"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="search" ng-show="domains.length > 0">
+            <i class="icon-search"></i>
+            <input placeholder="Search domains..." ng-model="searchText" />
+        </div>
+        <div ng-show="domains.length < 1">
+            You do not appear to have any domains set. Add domains via the content tree.
+        </div>
     </div>
-    <div class="row">
-        <table class="table table-striped" ng-show="domains.length > 0">
-            <thead>
-                <tr>
-                    <th class="domain">Domain</th>
-                    <th class="node">Node</th>
-                    <th class="culture">Culture</th>
-                    <th class="action"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="domain in domains | filter:searchText">
-                    <td class="domain">
-                        <a ng-show="domain.Name != '-'" href="{{ domain.Url }}" target="_blank">{{ domain.Name }}</a>
-                        <span ng-show="domain.Name == '-'">{{ domain.Name }}</span>
-                    </td>
-                    <td class="node"><a ng-click="showNode(domain.RootNodeId)">{{ domain.RootNodeName }}</a></td>
-                    <td class="culture">{{ domain.Culture }}</td>
-                    <td class="action"><span class="icon icon-delete" ng-click="deleteDomain(domain)"></span></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div ng-show="domains.length < 1">
-        You do not appear to have any domains set. Add domains via the content tree.
-    </div>
-</div> 
+</div>

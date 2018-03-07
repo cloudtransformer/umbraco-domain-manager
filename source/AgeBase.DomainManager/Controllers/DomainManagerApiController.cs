@@ -21,8 +21,6 @@ namespace AgeBase.DomainManager.Controllers
         [HttpDelete]
         public bool Delete(int id)
         {
-            // TODO: Find a better way to filter by id instead of retrieving all domains together
-
             var domain = Domain.GetDomains(true).FirstOrDefault(d => d.Id.Equals(id));
             if (domain == null) 
                 return false;

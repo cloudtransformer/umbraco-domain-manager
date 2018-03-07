@@ -1,4 +1,5 @@
-﻿using Umbraco.Core.Services;
+﻿using umbraco.cms.businesslogic.web;
+using Umbraco.Core.Services;
 
 namespace AgeBase.DomainManager.Models
 {
@@ -14,15 +15,22 @@ namespace AgeBase.DomainManager.Models
         {
         }
 
-        public DomainManagerDomain(umbraco.cms.businesslogic.web.Domain domain, IContentService contentService)
+        public DomainManagerDomain(Domain domain, IContentService contentService)
         {
             if (domain == null || contentService == null)
+            {
                 return;
+            }
 
             Id = domain.Id;
             Culture = domain.Language.CultureAlias;
             Name = domain.Name.Equals("*" + domain.RootNodeId) ? "-" : domain.Name;
             RootNodeId = domain.RootNodeId;
+
+            if (Name.EndsWith("/"))
+            {
+                Name = Name.TrimEnd('/');
+            }
 
             var rootNode = contentService.GetById(RootNodeId);
             if (rootNode != null)
