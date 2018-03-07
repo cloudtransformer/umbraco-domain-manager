@@ -33,16 +33,22 @@
                         </tr>
                     </tbody>
                 </table>
+                <table class="table table-striped" ng-show="domains.length < 1">
+                    <tbody>
+                        <tr>
+                            <td class="domain">
+                                You do not appear to have any domains set. Add domains via the content tree.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-
 
         <div class="search" ng-show="domains.length > 0">
             <i class="icon-search"></i>
             <input placeholder="Search domains..." ng-model="searchText" />
         </div>
-        <div ng-show="domains.length < 1">
-            You do not appear to have any domains set. Add domains via the content tree.
-        </div>
+
     </div>
 </div>

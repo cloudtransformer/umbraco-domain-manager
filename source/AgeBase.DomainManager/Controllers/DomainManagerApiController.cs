@@ -15,6 +15,7 @@ namespace AgeBase.DomainManager.Controllers
         public IEnumerable<DomainManagerDomain> Get()
         {
             var contentService = ApplicationContext.Services.ContentService;
+
             return Domain.GetDomains(true).OrderBy(d => d.Name).Select(d => new DomainManagerDomain(d, contentService));
         }
 
