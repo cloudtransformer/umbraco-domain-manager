@@ -30,9 +30,9 @@
   <info>
     <package>
       <name>AgeBase: Domain Manager</name>
-      <version>1.1.0</version>
+      <version>1.1.1</version>
       <license url="http://opensource.org/licenses/MIT">MIT License</license>
-      <url>http://agebase.co.uk/</url>
+      <url>https://github.com/agebase/umbraco-domain-manager</url>
       <requirements>
         <major>7</major>
         <minor>6</minor>

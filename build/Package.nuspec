@@ -3,11 +3,11 @@
   <metadata>
     <title>Domain Manager</title>
     <id>AgeBase.DomainManager</id>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <authors>AgeBase</authors>
     <owners>AgeBase</owners>
     <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
-    <projectUrl>https://agebase.co.uk/blog/domain-manager-for-umbraco/</projectUrl>
+    <projectUrl>https://github.com/agebase/umbraco-domain-manager</projectUrl>
     <iconUrl>https://agebase.co.uk/media/14030/nuget-logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>The Domain Manager package is a handy content dashboard item for viewing domains within an Umbraco application. It allows editors to view each domain, it's culture and which node the domain is associated to. The dashboard item also allows editors to remove domains too. This package is especially good for multi lingual sites.</description>
